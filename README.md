@@ -2,8 +2,6 @@
 
 Assignment 3 of **SWE 363 — Web Engineering & Development** at KFUPM. This single-page portfolio builds on Assignments 1 and 2 and adds more complex logic, a richer GitHub API integration, state that is remembered between visits, and performance work. It is built with plain HTML, CSS and JavaScript, with no frameworks and no build step.
 
-**Live site:** <https://abdulaziz20245.github.io/202456880-AbdulazizSaleh-assignment3/> (GitHub Pages)
-
 ## Features
 
 | Requirement | What the site does |
@@ -76,7 +74,7 @@ To reset everything the site remembers, clear this site's data in your browser (
 
 ## Browser support
 
-Tested in Chromium (desktop 1280 px and mobile 375 px widths, automated) and manually in Firefox and on a mobile phone (via the GitHub Pages link), with no console errors from the site and no horizontal scrolling. The code uses standard features supported by current Chrome, Edge, Firefox and Safari (`fetch`, `AbortController`, `IntersectionObserver`, `localStorage`). If `IntersectionObserver` is missing, sections simply appear without animation and GitHub data loads immediately.
+Tested in Chromium (desktop 1280 px and mobile 375 px widths, automated) and manually in Firefox, with no console errors from the site and no horizontal scrolling. The code uses standard features supported by current Chrome, Edge, Firefox and Safari (`fetch`, `AbortController`, `IntersectionObserver`, `localStorage`). If `IntersectionObserver` is missing, sections simply appear without animation and GitHub data loads immediately.
 
 ## AI use (summary)
 
