@@ -118,6 +118,6 @@ Automated with Playwright (Chromium) against a local server, with GitHub respons
 
 ## 8. Known limitations
 
-- Project dates and levels are set by hand in `index.html`.
+- Project dates and levels are approximate and set by hand in `index.html`; they exist to demonstrate sorting and level filtering.
 - The contact form does not send messages (no backend).
 - Without an internet connection the GitHub section can only show its error state.

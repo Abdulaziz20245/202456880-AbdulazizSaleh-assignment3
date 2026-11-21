@@ -43,14 +43,14 @@ TODO (student): write what you learned, in your own words. Ideas to reflect on:
 - I checked that the features meet each part of the assignment and that the site works on desktop and mobile widths.
 - I verified the AI's claims by running the tests and Lighthouse myself rather than trusting the summary.
 - I kept my existing content (projects, experience, education, skills); the AI only added features and compressed images, it did not invent new portfolio content.
-- TODO (student): confirm or correct the project dates and levels in `index.html` (they were AI estimates: CVU Nov 2025 / Intermediate, NEO Mar 2025 / Beginner, Colorization Feb 2026 / Intermediate, Transformer Jun 2026 / Advanced).
+- The project dates and levels in `index.html` are AI estimates (CVU Nov 2025 / Intermediate, NEO Mar 2025 / Beginner, Colorization Feb 2026 / Intermediate, Transformer Jun 2026 / Advanced). I reviewed them and kept them because they only serve to demonstrate the sorting and level features.
 - TODO (student): list anything else you changed after reviewing the AI's code, and how you tested it.
 
 ## Usage Log
 
 | ID | Tool (model) | Date | Purpose | Files affected | What you changed and how you verified it |
 |----|--------------|------|---------|----------------|------------------------------------------|
-| C01 | Claude Code (Claude Opus 5.5) | 2026-11-21 | Build Assignment 3 from Assignment 2: project level/sort/reset, GitHub profile + repo filter/sort with timeout, error messages and caching, visitor name, show/hide sections, contact form gating and counter, visit timer, image compression, docs | `index.html`, `css/styles.css`, `js/script.js`, `assets/images/*`, `.gitignore`, `README.md`, `docs/*` | AI verification: `node --check`, automated Playwright tests (sorting, level + topic filters, empty state, saved view, Reset, visitor name, repo language filter/sort, HTML escaping, 403 error + Try again, hidden section after reload, form gating and submit, timer), mobile 375 px overflow check, Lighthouse (Performance 100, Accessibility 100, SEO 100). TODO (student): what you changed and how you checked it yourself (e.g. corrected project dates, tested live GitHub section in Chrome/Edge/Firefox/phone). |
+| C01 | Claude Code (Claude Opus 5.5) | 2026-11-21 | Build Assignment 3 from Assignment 2: project level/sort/reset, GitHub profile + repo filter/sort with timeout, error messages and caching, visitor name, show/hide sections, contact form gating and counter, visit timer, image compression, docs | `index.html`, `css/styles.css`, `js/script.js`, `assets/images/*`, `.gitignore`, `README.md`, `docs/*` | AI verification: `node --check`, automated Playwright tests (sorting, level + topic filters, empty state, saved view, Reset, visitor name, repo language filter/sort, HTML escaping, 403 error + Try again, hidden section after reload, form gating and submit, timer), mobile 375 px overflow check, Lighthouse (Performance 100, Accessibility 100, SEO 100). TODO (student): what you changed and how you checked it yourself (e.g. tested live GitHub section in Chrome/Edge/Firefox/phone). |
 | A01 | Claude Code (Claude Opus 5.5) | 2026-11-21 | AI-generated version of the site before my edits | all of the above | Included in the evidence ZIP under `artifacts/`. |
 
 ## AI Usage Declaration
