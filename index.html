@@ -55,6 +55,29 @@
     <main id="main-content" tabindex="-1">
       <section id="about" class="hero">
         <div class="hero-content">
+          <div class="visitor-greeting" id="visitor-greeting">
+            <p class="greeting-text" id="greeting-text" aria-live="polite">
+              Welcome! What should I call you?
+            </p>
+
+            <form class="name-form" id="name-form" novalidate>
+              <label class="visually-hidden" for="visitor-name">Your name</label>
+              <input
+                type="text"
+                id="visitor-name"
+                name="visitor-name"
+                placeholder="Your first name"
+                maxlength="30"
+                autocomplete="given-name"
+              />
+              <button type="submit">Save</button>
+            </form>
+
+            <button type="button" class="link-button" id="forget-name" hidden>
+              Not you? Change name
+            </button>
+          </div>
+
           <p class="hero-intro">Hello, I'm</p>
 
           <h1>Abdulaziz Saleh</h1>
@@ -120,13 +143,42 @@
             <button type="button" class="filter-btn" data-filter="Machine Learning" aria-pressed="false">Machine Learning</button>
             <button type="button" class="filter-btn" data-filter="NLP" aria-pressed="false">NLP</button>
           </div>
-          <label class="search-label" for="project-search">Search projects</label>
-          <input type="search" id="project-search" class="project-search" placeholder="Search by name or technology…" autocomplete="off" />
+
+          <div class="control-row">
+            <div class="control">
+              <label for="project-level">Experience level</label>
+              <select id="project-level">
+                <option value="all">All levels</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+            </div>
+
+            <div class="control">
+              <label for="project-sort">Sort by</label>
+              <select id="project-sort">
+                <option value="newest">Newest first</option>
+                <option value="oldest">Oldest first</option>
+                <option value="name-asc">Name (A–Z)</option>
+                <option value="name-desc">Name (Z–A)</option>
+              </select>
+            </div>
+
+            <div class="control control-grow">
+              <label for="project-search">Search</label>
+              <input type="search" id="project-search" class="project-search" placeholder="Search by name or technology…" autocomplete="off" />
+            </div>
+
+            <button type="button" class="reset-btn" id="reset-projects">Reset</button>
+          </div>
+
+          <p class="level-message" id="level-message" aria-live="polite"></p>
           <p class="results-count" id="results-count" role="status" aria-live="polite"></p>
         </div>
 
         <div class="project-grid" id="project-grid">
-          <article class="project-card" data-tags="Computer Vision">
+          <article class="project-card" data-date="2025-11" data-level="intermediate" data-tags="Computer Vision">
             <img
               class="project-image"
               src="assets/images/projects/cvu-computer-vision.jpg"
@@ -138,13 +190,15 @@
 
             <h3>CVU — Computer Vision Project</h3>
 
+            <p class="project-meta">Intermediate · <time datetime="2025-11">Nov 2025</time></p>
+
             <p>
               A COE 301 project exploring computer vision concepts and practical
               implementation.
             </p>
           </article>
 
-          <article class="project-card" data-tags="Machine Learning">
+          <article class="project-card" data-date="2025-03" data-level="beginner" data-tags="Machine Learning">
             <img
               class="project-image"
               src="assets/images/projects/neo-classification.jpg"
@@ -155,6 +209,8 @@
             />
 
             <h3>Near-Earth Object Classification</h3>
+
+            <p class="project-meta">Beginner · <time datetime="2025-03">Mar 2025</time></p>
 
             <p>
               Built machine learning models to classify near-Earth objects using
@@ -171,7 +227,7 @@
             </ul>
           </article>
 
-          <article class="project-card" data-tags="Computer Vision">
+          <article class="project-card" data-date="2026-02" data-level="intermediate" data-tags="Computer Vision">
             <img
               class="project-image"
               src="assets/images/projects/colorization.jpg"
@@ -182,6 +238,8 @@
             />
 
             <h3>CIFAR-10 Image Colorization</h3>
+
+            <p class="project-meta">Intermediate · <time datetime="2026-02">Feb 2026</time></p>
 
             <p>
               Developed an image colorization model using Lab color space and a
@@ -198,7 +256,7 @@
             </ul>
           </article>
 
-          <article class="project-card" data-tags="NLP, Machine Learning">
+          <article class="project-card" data-date="2026-06" data-level="advanced" data-tags="NLP, Machine Learning">
             <img
               class="project-image"
               src="assets/images/projects/transformer.jpg"
@@ -208,6 +266,8 @@
               height="436"
             />
             <h3>Transformer Text Classifier</h3>
+
+            <p class="project-meta">Advanced · <time datetime="2026-06">Jun 2026</time></p>
 
             <p>
               Implemented a Transformer-based text classification model from
@@ -226,7 +286,7 @@
         </div>
 
         <p class="empty-state" id="empty-state" hidden>
-          No projects match your search. Try a different keyword or choose “All”.
+          No projects match these choices. Try another level, keyword, or press “Reset”.
         </p>
       </section>
 
@@ -235,166 +295,225 @@
           <h2>Latest on GitHub</h2>
           <p>My most recently updated public repositories, loaded live from the GitHub API.</p>
         </header>
+        <div class="github-profile" id="github-profile" hidden></div>
+
+        <div class="control-row repo-controls" id="repo-controls" hidden>
+          <div class="control">
+            <label for="repo-language">Language</label>
+            <select id="repo-language">
+              <option value="all">All languages</option>
+            </select>
+          </div>
+
+          <div class="control">
+            <label for="repo-sort">Sort by</label>
+            <select id="repo-sort">
+              <option value="updated">Recently updated</option>
+              <option value="stars">Most stars</option>
+              <option value="name">Name (A–Z)</option>
+            </select>
+          </div>
+        </div>
+
         <div id="repo-status" class="repo-status" role="status" aria-live="polite"></div>
         <ul class="repo-list" id="repo-list"></ul>
       </section>
 
       <section id="experience" class="section reveal">
-        <header class="section-header">
-          <h2>Experience &amp; Activities</h2>
+        <header class="section-header has-toggle">
+          <div>
+            <h2>Experience &amp; Activities</h2>
 
-          <p>Leadership, communications, and student activities at KFUPM.</p>
+            <p>Leadership, communications, and student activities at KFUPM.</p>
+          </div>
+
+          <button
+            type="button"
+            class="section-toggle"
+            aria-expanded="true"
+            aria-controls="experience-body"
+          >
+            Hide
+          </button>
         </header>
 
-        <div class="experience-list">
-          <article class="experience-item">
-            <div class="experience-heading">
-              <div>
-                <h3>KFUPM Mentorship Program</h3>
-                <p class="experience-role">
-                  Program Operations &amp; Communications Coordinator
-                </p>
+        <div class="section-body" id="experience-body">
+          <div class="experience-list">
+            <article class="experience-item">
+              <div class="experience-heading">
+                <div>
+                  <h3>KFUPM Mentorship Program</h3>
+                  <p class="experience-role">
+                    Program Operations &amp; Communications Coordinator
+                  </p>
+                </div>
+
+                <p class="experience-date">June 2026 — Present</p>
+              </div>
+            </article>
+
+            <article class="experience-item">
+              <div class="experience-heading">
+                <div>
+                  <h3>KFUPM Computer Club</h3>
+                  <p class="experience-role">Marketing Team</p>
+                </div>
+
+                <p class="experience-date">January 2025 — May 2026</p>
               </div>
 
-              <p class="experience-date">June 2026 — Present</p>
-            </div>
-          </article>
+              <p>
+                Contributed to marketing campaigns, promotional content,
+                communications, and event promotion for the club.
+              </p>
+            </article>
 
-          <article class="experience-item">
-            <div class="experience-heading">
-              <div>
-                <h3>KFUPM Computer Club</h3>
-                <p class="experience-role">Marketing Team</p>
+            <article class="experience-item">
+              <div class="experience-heading">
+                <div>
+                  <h3>KFUPM Energy Week</h3>
+                  <p class="experience-role">Marketing Team Member</p>
+                </div>
+
+                <p class="experience-date">January 2025</p>
               </div>
 
-              <p class="experience-date">January 2025 — May 2026</p>
-            </div>
-
-            <p>
-              Contributed to marketing campaigns, promotional content,
-              communications, and event promotion for the club.
-            </p>
-          </article>
-
-          <article class="experience-item">
-            <div class="experience-heading">
-              <div>
-                <h3>KFUPM Energy Week</h3>
-                <p class="experience-role">Marketing Team Member</p>
-              </div>
-
-              <p class="experience-date">January 2025</p>
-            </div>
-
-            <p>
-              Supported event communications, photography, and promotional
-              content during KFUPM Energy Week.
-            </p>
-          </article>
+              <p>
+                Supported event communications, photography, and promotional
+                content during KFUPM Energy Week.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
       <section id="education" class="section reveal">
-        <header class="section-header">
-          <h2>Education</h2>
+        <header class="section-header has-toggle">
+          <div>
+            <h2>Education</h2>
 
-          <p>
-            My academic background in computer science and artificial
-            intelligence.
-          </p>
+            <p>
+              My academic background in computer science and artificial
+              intelligence.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            class="section-toggle"
+            aria-expanded="true"
+            aria-controls="education-body"
+          >
+            Hide
+          </button>
         </header>
 
-        <div class="education-list">
-          <article class="education-item">
-            <div class="education-heading">
-              <div>
-                <h3>King Fahd University of Petroleum &amp; Minerals</h3>
+        <div class="section-body" id="education-body">
+          <div class="education-list">
+            <article class="education-item">
+              <div class="education-heading">
+                <div>
+                  <h3>King Fahd University of Petroleum &amp; Minerals</h3>
 
-                <p class="education-degree">B.Sc. in Computer Science</p>
+                  <p class="education-degree">B.Sc. in Computer Science</p>
+                </div>
+
+                <p class="education-date">2024 — 2028</p>
               </div>
 
-              <p class="education-date">2024 — 2028</p>
-            </div>
+              <p class="education-location">Dhahran, Saudi Arabia</p>
+            </article>
 
-            <p class="education-location">Dhahran, Saudi Arabia</p>
-          </article>
+            <article class="education-item">
+              <div class="education-heading">
+                <div>
+                  <h3>University of Prince Mugrin</h3>
 
-          <article class="education-item">
-            <div class="education-heading">
-              <div>
-                <h3>University of Prince Mugrin</h3>
+                  <p class="education-degree">
+                    B.Sc. in Artificial Intelligence — Transferred
+                  </p>
+                </div>
 
-                <p class="education-degree">
-                  B.Sc. in Artificial Intelligence — Transferred
-                </p>
+                <p class="education-date">2023 — 2024</p>
               </div>
 
-              <p class="education-date">2023 — 2024</p>
-            </div>
-
-            <p class="education-location">Medina, Saudi Arabia</p>
-          </article>
+              <p class="education-location">Medina, Saudi Arabia</p>
+            </article>
+          </div>
         </div>
       </section>
       <section id="skills" class="section reveal">
-        <header class="section-header">
-          <h2>Skills</h2>
+        <header class="section-header has-toggle">
+          <div>
+            <h2>Skills</h2>
 
-          <p>
-            Technologies and tools I have worked with across software
-            development and artificial intelligence.
-          </p>
+            <p>
+              Technologies and tools I have worked with across software
+              development and artificial intelligence.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            class="section-toggle"
+            aria-expanded="true"
+            aria-controls="skills-body"
+          >
+            Hide
+          </button>
         </header>
 
-        <div class="skills-grid">
-          <article class="skill-group">
-            <h3>Programming</h3>
+        <div class="section-body" id="skills-body">
+          <div class="skills-grid">
+            <article class="skill-group">
+              <h3>Programming</h3>
 
-            <ul class="skill-list">
-              <li>Python</li>
-              <li>Java</li>
-              <li>JavaScript</li>
-              <li>HTML</li>
-              <li>CSS</li>
-            </ul>
-          </article>
+              <ul class="skill-list">
+                <li>Python</li>
+                <li>Java</li>
+                <li>JavaScript</li>
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
+            </article>
 
-          <article class="skill-group">
-            <h3>AI &amp; Machine Learning</h3>
+            <article class="skill-group">
+              <h3>AI &amp; Machine Learning</h3>
 
-            <ul class="skill-list">
-              <li>PyTorch</li>
-              <li>TensorFlow</li>
-              <li>scikit-learn</li>
-              <li>Deep Learning</li>
-              <li>Computer Vision</li>
-              <li>CNNs</li>
-              <li>Image Segmentation</li>
-              <li>Object Detection</li>
-            </ul>
-          </article>
+              <ul class="skill-list">
+                <li>PyTorch</li>
+                <li>TensorFlow</li>
+                <li>scikit-learn</li>
+                <li>Deep Learning</li>
+                <li>Computer Vision</li>
+                <li>CNNs</li>
+                <li>Image Segmentation</li>
+                <li>Object Detection</li>
+              </ul>
+            </article>
 
-          <article class="skill-group">
-            <h3>Libraries</h3>
+            <article class="skill-group">
+              <h3>Libraries</h3>
 
-            <ul class="skill-list">
-              <li>NumPy</li>
-              <li>Pandas</li>
-              <li>Matplotlib</li>
-              <li>OpenCV</li>
-              <li>torchvision</li>
-            </ul>
-          </article>
+              <ul class="skill-list">
+                <li>NumPy</li>
+                <li>Pandas</li>
+                <li>Matplotlib</li>
+                <li>OpenCV</li>
+                <li>torchvision</li>
+              </ul>
+            </article>
 
-          <article class="skill-group">
-            <h3>Tools &amp; Backend</h3>
+            <article class="skill-group">
+              <h3>Tools &amp; Backend</h3>
 
-            <ul class="skill-list">
-              <li>Git</li>
-              <li>Docker</li>
-              <li>Flask</li>
-              <li>FastAPI</li>
-            </ul>
-          </article>
+              <ul class="skill-list">
+                <li>Git</li>
+                <li>Docker</li>
+                <li>Flask</li>
+                <li>FastAPI</li>
+              </ul>
+            </article>
+          </div>
         </div>
       </section>
       <section id="contact" class="section contact-section reveal">
@@ -435,13 +554,31 @@
           </div>
 
           <div class="form-group">
-            <label for="message">Message</label>
+            <label for="subject">Subject</label>
 
-            <textarea id="message" name="message" rows="6" required></textarea>
-            <p class="field-error" id="message-error" aria-live="polite"></p>
+            <select id="subject" name="subject" required>
+              <option value="">Choose a topic…</option>
+              <option value="internship">Internship or job</option>
+              <option value="project">Project collaboration</option>
+              <option value="research">Research</option>
+              <option value="other">Something else</option>
+            </select>
+            <p class="field-error" id="subject-error" aria-live="polite"></p>
           </div>
 
-          <button type="submit" class="submit-button">Send Message</button>
+          <div class="form-group">
+            <label for="message">Message</label>
+
+            <textarea id="message" name="message" rows="6" maxlength="500" required aria-describedby="message-count"></textarea>
+            <div class="field-footer">
+              <p class="field-error" id="message-error" aria-live="polite"></p>
+              <p class="char-count" id="message-count">0 / 500</p>
+            </div>
+          </div>
+
+          <p class="form-hint" id="form-hint">Fill in every field to enable the Send button.</p>
+
+          <button type="submit" class="submit-button" id="submit-button" disabled>Send Message</button>
 
           <p
             class="form-status"
@@ -474,6 +611,11 @@
     </main>
     <footer class="site-footer">
       <p>&copy; 2026 Abdulaziz Saleh. Built with HTML, CSS &amp; JavaScript.</p>
+      <p class="visit-info" aria-live="off">
+        <span id="visit-timer">You've been here for 0s</span>
+        <span aria-hidden="true">·</span>
+        <span id="visit-count"></span>
+      </p>
     </footer>
   </body>
 </html>

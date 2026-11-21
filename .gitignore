@@ -1,4 +1,15 @@
+# OS / editor files
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
+
+# AI evidence is submitted on Blackboard, not committed
+ai-evidence/
+conversations/
+artifacts/
+*-ai-evidence.zip
+
+# Tooling output
+node_modules/
+lighthouse-report*.html
