@@ -74,7 +74,7 @@ To reset everything the site remembers, clear this site's data in your browser (
 
 ## Browser support
 
-Tested in Chromium (desktop 1280 px and mobile 375 px widths) with no console errors from the site and no horizontal scrolling. The code uses standard features supported by current Chrome, Edge, Firefox and Safari (`fetch`, `AbortController`, `IntersectionObserver`, `localStorage`). If `IntersectionObserver` is missing, sections simply appear without animation and GitHub data loads immediately.
+Tested in Chromium (desktop 1280 px and mobile 375 px widths, automated) and manually in Firefox, with no console errors from the site and no horizontal scrolling. The code uses standard features supported by current Chrome, Edge, Firefox and Safari (`fetch`, `AbortController`, `IntersectionObserver`, `localStorage`). If `IntersectionObserver` is missing, sections simply appear without animation and GitHub data loads immediately.
 
 ## AI use (summary)
 
