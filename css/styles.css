@@ -614,6 +614,8 @@ main {
 }
 
 .contact-links {
+  margin-top: 2rem;
+
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -711,10 +713,6 @@ main {
   margin: 0;
 
   font-size: 0.875rem;
-}
-
-.contact-links {
-  margin-top: 2rem;
 }
 
 /* =========================
@@ -868,10 +866,6 @@ main {
     padding-block: 3rem;
   }
 }
-
-/* =========================
-   Reduced Motion
-   ========================= */
 
 /* =========================
    Assignment 2: Interactivity
