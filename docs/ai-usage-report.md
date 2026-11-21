@@ -1,7 +1,5 @@
 # AI Usage Report — Assignment 3
 
-> **Before submitting:** replace every line marked **TODO (student)** with your own words. Those parts describe your own review, learning and changes, so they must come from you.
-
 ## Overview
 
 AI was used in this assignment. I used Claude Code to plan and write the Assignment 3 features on top of my Assignment 2 portfolio, compress the images, test the site automatically, and draft the documentation. I then reviewed, tested and adjusted the result.
@@ -23,34 +21,33 @@ AI was used in this assignment. I used Claude Code to plan and write the Assignm
 
 **Challenges / limitations**
 
-- The AI did not know my real project dates or difficulty levels, so it put in estimates that I had to check and correct.
+- The AI did not know my real project dates or difficulty levels, so it put in estimates that I had to review.
 - The cloud session could not call the GitHub API for my account directly, so the API was tested with mocked responses; I had to check the live GitHub section myself in the browser.
 - It produced a lot of code at once, so I had to read it carefully to make sure I understand and can explain every part.
-- TODO (student): add any other difficulty you had.
+- One challenge was understanding how all the new JavaScript features worked together. Since AI generated several features at once, it took me some time to follow the code, especially the filtering logic, API requests, and saved preferences. I needed to review these parts carefully to understand how they worked and how they affected the website.
 
 ## Learning Outcomes
 
-TODO (student): write what you learned, in your own words. Ideas to reflect on:
+Through this assignment, I learned how to build more interactive websites using JavaScript. I learned how to fetch data from an external API and display it dynamically, as well as how to handle errors when an API request fails. I also gained a better understanding of filtering and sorting data based on multiple conditions, such as project difficulty, topic, and search keywords.
 
-- How the project list uses one state object and a filter → level → search → sort pipeline.
-- How `AbortController` adds a timeout to `fetch`, and why different HTTP status codes deserve different messages.
-- `localStorage` vs `sessionStorage`, and why every storage call is wrapped in `try/catch`.
-- How `IntersectionObserver` can delay work (the API call) until it is needed.
-- How image size dominated page load time, and how Lighthouse measures it.
+Another important thing I learned was the difference between `localStorage` and `sessionStorage`, and how they can be used to remember user preferences. I also learned how `IntersectionObserver` can improve performance by delaying API requests until they are needed.
+
+Finally, I learned how important website performance is. I saw how large images can slow down a website and how compressing them can improve Lighthouse scores. Overall, this assignment helped me understand more advanced JavaScript concepts and how to apply them to a real website.
 
 ## Responsible Use & Modifications
 
-- I checked that the features meet each part of the assignment and that the site works on desktop and mobile widths.
-- I verified the AI's claims by running the tests and Lighthouse myself rather than trusting the summary.
-- I kept my existing content (projects, experience, education, skills); the AI only added features and compressed images, it did not invent new portfolio content.
-- The project dates and levels in `index.html` are AI estimates (CVU Nov 2025 / Intermediate, NEO Mar 2025 / Beginner, Colorization Feb 2026 / Intermediate, Transformer Jun 2026 / Advanced). I reviewed them and kept them because they only serve to demonstrate the sorting and level features.
-- TODO (student): list anything else you changed after reviewing the AI's code, and how you tested it.
+- I reviewed the AI-generated code and compared the implemented features with the assignment requirements to make sure nothing was missing.
+- I checked the project information and kept the estimated dates and difficulty levels for demonstrating the filtering and sorting features.
+- I tested the website manually by trying the project filters, sorting options, reset button, theme switching, and contact form validation.
+- I also checked whether user preferences were saved correctly after refreshing the page and whether the layout worked properly on smaller screens.
+- I reviewed the GitHub API section to understand how repository information was retrieved and displayed.
+- My existing portfolio content (projects, experience, education, skills) was kept; the AI only added features and compressed images, it did not invent new portfolio content.
 
 ## Usage Log
 
 | ID | Tool (model) | Date | Purpose | Files affected | What you changed and how you verified it |
 |----|--------------|------|---------|----------------|------------------------------------------|
-| C01 | Claude Code (Claude Opus 5.5) | 2026-11-21 | Build Assignment 3 from Assignment 2: project level/sort/reset, GitHub profile + repo filter/sort with timeout, error messages and caching, visitor name, show/hide sections, contact form gating and counter, visit timer, image compression, docs | `index.html`, `css/styles.css`, `js/script.js`, `assets/images/*`, `.gitignore`, `README.md`, `docs/*` | AI verification: `node --check`, automated Playwright tests (sorting, level + topic filters, empty state, saved view, Reset, visitor name, repo language filter/sort, HTML escaping, 403 error + Try again, hidden section after reload, form gating and submit, timer), mobile 375 px overflow check, Lighthouse (Performance 100, Accessibility 100, SEO 100). TODO (student): what you changed and how you checked it yourself (e.g. tested live GitHub section in Chrome/Edge/Firefox/phone). |
+| C01 | Claude Code (Claude Opus 5.5) | 2026-11-21 | Build Assignment 3 from Assignment 2: project level/sort/reset, GitHub profile + repo filter/sort with timeout, error messages and caching, visitor name, show/hide sections, contact form gating and counter, visit timer, image compression, docs | `index.html`, `css/styles.css`, `js/script.js`, `assets/images/*`, `.gitignore`, `README.md`, `docs/*` | AI verification: `node --check`, automated Playwright tests (sorting, level + topic filters, empty state, saved view, Reset, visitor name, repo language filter/sort, HTML escaping, 403 error + Try again, hidden section after reload, form gating and submit, timer), mobile 375 px overflow check, Lighthouse (Performance 100, Accessibility 100, SEO 100). Student review: After the AI generated the code, I reviewed the implementation and checked it against the assignment requirements. I kept the estimated project dates and difficulty levels for the demonstration features. I manually tested the filtering and sorting options, reset button, theme preferences, saved settings, contact form validation, and GitHub repository section. I also refreshed the page to check whether preferences were saved and checked the layout at different screen sizes. These checks helped me understand the generated code and verify that the features worked as expected. |
 | A01 | Claude Code (Claude Opus 5.5) | 2026-11-21 | AI-generated version of the site before my edits | all of the above | Included in the evidence ZIP under `artifacts/`. |
 
 ## AI Usage Declaration
