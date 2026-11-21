@@ -17,7 +17,7 @@ Beyond generating code, I used the AI as a testing and measuring partner:
 - **Performance audit:** the AI ran Lighthouse before and after its changes, so the improvement is measured (Performance 65 → 100, page weight 10.8 MB → 0.3 MB) instead of guessed.
 - **Automated test script:** the AI wrote a Playwright script that clicks through every feature like a visitor would, including fake GitHub responses to check the error message and the HTML escaping without waiting for a real outage.
 - **Image pipeline:** instead of resizing images by hand, the AI resized and compressed all of them in one Python (Pillow) step and updated the `width`/`height` attributes to match.
-- **Rubric self-check:** I gave the AI the grading rubric and asked it to review the repo against each line. It found a missing `Assisted-by` credit, a project card without tags, and a README link that was not live yet, and I fixed or removed them.
+- **Rubric self-check:** I gave the AI the grading rubric and asked it to review the repo against each line. It found a project card without technology tags and a README link that was not live yet; the tags were added and the link was removed.
 
 ## Benefits & Challenges
 
