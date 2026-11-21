@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Portfolio of Abdulaziz Saleh, a Computer Science student at KFUPM focused on AI, machine learning, and computer vision."
+    />
+
+    <title>Abdulaziz Saleh | CS &amp; AI/ML</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+
+  <body>
+    <a href="#main-content" class="skip-link"> Skip to main content </a>
+
+    <header class="site-header">
+      <nav class="navbar" aria-label="Main navigation">
+        <a href="#" class="brand"> Abdulaziz S. </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Open navigation menu"
+        >
+          Menu
+        </button>
+
+        <div class="nav-links" id="primary-navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Switch to dark mode"
+        >
+          Theme
+        </button>
+      </nav>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section id="about" class="hero">
+        <div class="hero-content">
+          <p class="hero-intro">Hello, I'm</p>
+
+          <h1>Abdulaziz Saleh</h1>
+
+          <p class="hero-subtitle">CS Student — AI/ML &amp; Computer Vision</p>
+
+          <p class="hero-description">
+            Computer Science student at KFUPM focused on Artificial
+            Intelligence, Machine Learning, and Computer Vision. I enjoy
+            building and experimenting with deep learning systems, with
+            particular interests in computer vision, generative models, and
+            modern AI architectures.
+          </p>
+
+          <div class="hero-links" aria-label="Profile links">
+            <a
+              href="https://github.com/Abdulaziz20245"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/abdulaziz-saleh-4215721a9/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+
+            <a href="mailto:abdulaziz2006.saleh@gmail.com"> Email </a>
+
+            <a href="assets/documents/My_Resume.pdf"> Resume </a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img
+            src="assets/images/ME.jpg"
+            alt="Portrait of Abdulaziz Saleh"
+            width="1080"
+            height="1980"
+            fetchpriority="high"
+          />
+        </div>
+      </section>
+
+      <section id="projects" class="section reveal">
+        <header class="section-header">
+          <h2>Projects</h2>
+
+          <p>
+            Selected projects in machine learning, computer vision, and
+            artificial intelligence.
+          </p>
+        </header>
+
+        <div class="project-controls">
+          <div class="filter-buttons" role="group" aria-label="Filter projects by topic">
+            <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="filter-btn" data-filter="Computer Vision" aria-pressed="false">Computer Vision</button>
+            <button type="button" class="filter-btn" data-filter="Machine Learning" aria-pressed="false">Machine Learning</button>
+            <button type="button" class="filter-btn" data-filter="NLP" aria-pressed="false">NLP</button>
+          </div>
+          <label class="search-label" for="project-search">Search projects</label>
+          <input type="search" id="project-search" class="project-search" placeholder="Search by name or technology…" autocomplete="off" />
+          <p class="results-count" id="results-count" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="project-grid" id="project-grid">
+          <article class="project-card" data-tags="Computer Vision">
+            <img
+              class="project-image"
+              src="assets/images/projects/cvu-computer-vision.jpg"
+              alt="Preview of the CVU Computer Vision project"
+              loading="lazy"
+              width="800"
+              height="450"
+            />
+
+            <h3>CVU — Computer Vision Project</h3>
+
+            <p>
+              A COE 301 project exploring computer vision concepts and practical
+              implementation.
+            </p>
+          </article>
+
+          <article class="project-card" data-tags="Machine Learning">
+            <img
+              class="project-image"
+              src="assets/images/projects/neo-classification.jpg"
+              alt="Preview of the Near-Earth Object Classification project"
+              loading="lazy"
+              width="800"
+              height="450"
+            />
+
+            <h3>Near-Earth Object Classification</h3>
+
+            <p>
+              Built machine learning models to classify near-Earth objects using
+              orbital data. Compared multiple classification algorithms and
+              evaluated their predictive performance.
+            </p>
+
+            <ul class="tag-list" aria-label="Technologies used">
+              <li>Python</li>
+              <li>scikit-learn</li>
+              <li>NumPy</li>
+              <li>Pandas</li>
+              <li>Machine Learning</li>
+            </ul>
+          </article>
+
+          <article class="project-card" data-tags="Computer Vision">
+            <img
+              class="project-image"
+              src="assets/images/projects/colorization.jpg"
+              alt="Preview of the CIFAR-10 Image Colorization project"
+              loading="lazy"
+              width="800"
+              height="450"
+            />
+
+            <h3>CIFAR-10 Image Colorization</h3>
+
+            <p>
+              Developed an image colorization model using Lab color space and a
+              U-Net/autoencoder-style architecture to reconstruct color
+              information from grayscale images.
+            </p>
+
+            <ul class="tag-list" aria-label="Technologies used">
+              <li>Python</li>
+              <li>PyTorch</li>
+              <li>Computer Vision</li>
+              <li>U-Net</li>
+              <li>Autoencoders</li>
+            </ul>
+          </article>
+
+          <article class="project-card" data-tags="NLP, Machine Learning">
+            <img
+              class="project-image"
+              src="assets/images/projects/transformer.jpg"
+              alt="Preview of the Transformer Text Classifier project"
+              loading="lazy"
+              width="800"
+              height="450"
+            />
+            <h3>Transformer Text Classifier</h3>
+
+            <p>
+              Implemented a Transformer-based text classification model from
+              scratch to better understand attention mechanisms, sequence
+              processing, and the model's training pipeline.
+            </p>
+
+            <ul class="tag-list" aria-label="Technologies used">
+              <li>Python</li>
+              <li>PyTorch</li>
+              <li>Transformers</li>
+              <li>NLP</li>
+              <li>Deep Learning</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="empty-state" id="empty-state" hidden>
+          No projects match your search. Try a different keyword or choose “All”.
+        </p>
+      </section>
+
+      <section id="github" class="section reveal">
+        <header class="section-header">
+          <h2>Latest on GitHub</h2>
+          <p>My most recently updated public repositories, loaded live from the GitHub API.</p>
+        </header>
+        <div id="repo-status" class="repo-status" role="status" aria-live="polite"></div>
+        <ul class="repo-list" id="repo-list"></ul>
+      </section>
+
+      <section id="experience" class="section reveal">
+        <header class="section-header">
+          <h2>Experience &amp; Activities</h2>
+
+          <p>Leadership, communications, and student activities at KFUPM.</p>
+        </header>
+
+        <div class="experience-list">
+          <article class="experience-item">
+            <div class="experience-heading">
+              <div>
+                <h3>KFUPM Mentorship Program</h3>
+                <p class="experience-role">
+                  Program Operations &amp; Communications Coordinator
+                </p>
+              </div>
+
+              <p class="experience-date">June 2026 — Present</p>
+            </div>
+          </article>
+
+          <article class="experience-item">
+            <div class="experience-heading">
+              <div>
+                <h3>KFUPM Computer Club</h3>
+                <p class="experience-role">Marketing Team</p>
+              </div>
+
+              <p class="experience-date">January 2025 — May 2026</p>
+            </div>
+
+            <p>
+              Contributed to marketing campaigns, promotional content,
+              communications, and event promotion for the club.
+            </p>
+          </article>
+
+          <article class="experience-item">
+            <div class="experience-heading">
+              <div>
+                <h3>KFUPM Energy Week</h3>
+                <p class="experience-role">Marketing Team Member</p>
+              </div>
+
+              <p class="experience-date">January 2025</p>
+            </div>
+
+            <p>
+              Supported event communications, photography, and promotional
+              content during KFUPM Energy Week.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="education" class="section reveal">
+        <header class="section-header">
+          <h2>Education</h2>
+
+          <p>
+            My academic background in computer science and artificial
+            intelligence.
+          </p>
+        </header>
+
+        <div class="education-list">
+          <article class="education-item">
+            <div class="education-heading">
+              <div>
+                <h3>King Fahd University of Petroleum &amp; Minerals</h3>
+
+                <p class="education-degree">B.Sc. in Computer Science</p>
+              </div>
+
+              <p class="education-date">2024 — 2028</p>
+            </div>
+
+            <p class="education-location">Dhahran, Saudi Arabia</p>
+          </article>
+
+          <article class="education-item">
+            <div class="education-heading">
+              <div>
+                <h3>University of Prince Mugrin</h3>
+
+                <p class="education-degree">
+                  B.Sc. in Artificial Intelligence — Transferred
+                </p>
+              </div>
+
+              <p class="education-date">2023 — 2024</p>
+            </div>
+
+            <p class="education-location">Medina, Saudi Arabia</p>
+          </article>
+        </div>
+      </section>
+      <section id="skills" class="section reveal">
+        <header class="section-header">
+          <h2>Skills</h2>
+
+          <p>
+            Technologies and tools I have worked with across software
+            development and artificial intelligence.
+          </p>
+        </header>
+
+        <div class="skills-grid">
+          <article class="skill-group">
+            <h3>Programming</h3>
+
+            <ul class="skill-list">
+              <li>Python</li>
+              <li>Java</li>
+              <li>JavaScript</li>
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
+          </article>
+
+          <article class="skill-group">
+            <h3>AI &amp; Machine Learning</h3>
+
+            <ul class="skill-list">
+              <li>PyTorch</li>
+              <li>TensorFlow</li>
+              <li>scikit-learn</li>
+              <li>Deep Learning</li>
+              <li>Computer Vision</li>
+              <li>CNNs</li>
+              <li>Image Segmentation</li>
+              <li>Object Detection</li>
+            </ul>
+          </article>
+
+          <article class="skill-group">
+            <h3>Libraries</h3>
+
+            <ul class="skill-list">
+              <li>NumPy</li>
+              <li>Pandas</li>
+              <li>Matplotlib</li>
+              <li>OpenCV</li>
+              <li>torchvision</li>
+            </ul>
+          </article>
+
+          <article class="skill-group">
+            <h3>Tools &amp; Backend</h3>
+
+            <ul class="skill-list">
+              <li>Git</li>
+              <li>Docker</li>
+              <li>Flask</li>
+              <li>FastAPI</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section id="contact" class="section contact-section reveal">
+        <header class="section-header">
+          <h2>Let's Connect</h2>
+
+          <p>
+            I'm interested in AI/ML research, technical projects, internships,
+            and collaborative opportunities.
+          </p>
+        </header>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              autocomplete="name"
+              required
+            />
+            <p class="field-error" id="name-error" aria-live="polite"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+            />
+            <p class="field-error" id="email-error" aria-live="polite"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+
+            <textarea id="message" name="message" rows="6" required></textarea>
+            <p class="field-error" id="message-error" aria-live="polite"></p>
+          </div>
+
+          <button type="submit" class="submit-button">Send Message</button>
+
+          <p
+            class="form-status"
+            id="form-status"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
+
+        <div class="contact-links">
+          <a href="mailto:abdulaziz2006.saleh@gmail.com"> Email </a>
+
+          <a
+            href="https://github.com/Abdulaziz20245"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/abdulaziz-saleh-4215721a9/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p>&copy; 2026 Abdulaziz Saleh. Built with HTML, CSS &amp; JavaScript.</p>
+    </footer>
+  </body>
+</html>
