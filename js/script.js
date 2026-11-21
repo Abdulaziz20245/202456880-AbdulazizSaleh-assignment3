@@ -150,8 +150,7 @@ nameForm.addEventListener("submit", (event) => {
   const name = nameInput.value.trim();
 
   if (!namePattern.test(name)) {
-    greetingText.textContent =
-      "Please use letters only (up to 30 characters).";
+    greetingText.textContent = "Please use letters only (up to 30 characters).";
     nameInput.focus();
     return;
   }
@@ -186,7 +185,12 @@ const levelMessage = document.querySelector("#level-message");
 const resultsCount = document.querySelector("#results-count");
 const emptyState = document.querySelector("#empty-state");
 
-const DEFAULT_VIEW = { filter: "all", level: "all", sort: "newest", search: "" };
+const DEFAULT_VIEW = {
+  filter: "all",
+  level: "all",
+  sort: "newest",
+  search: "",
+};
 
 // A different message for each level the visitor picks.
 const LEVEL_MESSAGES = {
@@ -223,10 +227,13 @@ function loadProjectView() {
   const validLevels = [...levelSelect.options].map((o) => o.value);
 
   return {
-    filter: validFilters.includes(saved.filter) ? saved.filter : DEFAULT_VIEW.filter,
+    filter: validFilters.includes(saved.filter)
+      ? saved.filter
+      : DEFAULT_VIEW.filter,
     level: validLevels.includes(saved.level) ? saved.level : DEFAULT_VIEW.level,
     sort: saved.sort in SORTERS ? saved.sort : DEFAULT_VIEW.sort,
-    search: typeof saved.search === "string" ? saved.search : DEFAULT_VIEW.search,
+    search:
+      typeof saved.search === "string" ? saved.search : DEFAULT_VIEW.search,
   };
 }
 
@@ -248,8 +255,10 @@ function cardMatches(card) {
   const tags = card.dataset.tags.split(",").map((tag) => tag.trim());
   const query = projectView.search.trim().toLowerCase();
 
-  const topicOk = projectView.filter === "all" || tags.includes(projectView.filter);
-  const levelOk = projectView.level === "all" || card.dataset.level === projectView.level;
+  const topicOk =
+    projectView.filter === "all" || tags.includes(projectView.filter);
+  const levelOk =
+    projectView.level === "all" || card.dataset.level === projectView.level;
   const searchOk = !query || card.textContent.toLowerCase().includes(query);
 
   return topicOk && levelOk && searchOk;
@@ -389,12 +398,15 @@ async function fetchJson(url) {
 
 // Turn each kind of failure into a message a visitor can understand.
 function errorMessage(error) {
-  if (!navigator.onLine) return "You seem to be offline. Check your connection and";
-  if (error.name === "AbortError") return "GitHub is taking too long to answer. Please";
+  if (!navigator.onLine)
+    return "You seem to be offline. Check your connection and";
+  if (error.name === "AbortError")
+    return "GitHub is taking too long to answer. Please";
   if (error.message === "rate-limit") {
     return "GitHub's hourly request limit was reached. Wait a few minutes, then";
   }
-  if (error.message === "not-found") return "That GitHub account was not found. You can";
+  if (error.message === "not-found")
+    return "That GitHub account was not found. You can";
   return "Couldn't load repositories right now. Please";
 }
 
@@ -424,18 +436,24 @@ function renderProfile(profile) {
 
 // Fill the language menu from the languages the repos actually use.
 function fillLanguageOptions() {
-  const languages = [...new Set(repos.map((r) => r.language).filter(Boolean))].sort();
+  const languages = [
+    ...new Set(repos.map((r) => r.language).filter(Boolean)),
+  ].sort();
 
   repoLanguage.innerHTML =
     '<option value="all">All languages</option>' +
     languages
-      .map((lang) => `<option value="${escapeText(lang)}">${escapeText(lang)}</option>`)
+      .map(
+        (lang) =>
+          `<option value="${escapeText(lang)}">${escapeText(lang)}</option>`,
+      )
       .join("");
 }
 
 const REPO_SORTERS = {
   updated: (a, b) => new Date(b.pushed_at) - new Date(a.pushed_at),
-  stars: (a, b) => b.stargazers_count - a.stargazers_count || a.name.localeCompare(b.name),
+  stars: (a, b) =>
+    b.stargazers_count - a.stargazers_count || a.name.localeCompare(b.name),
   name: (a, b) => a.name.localeCompare(b.name),
 };
 
@@ -490,7 +508,9 @@ async function loadGitHub({ skipCache = false } = {}) {
       // Both requests run at the same time.
       const [profile, repoData] = await Promise.all([
         fetchJson(`${GITHUB_API}/users/${GITHUB_USER}`),
-        fetchJson(`${GITHUB_API}/users/${GITHUB_USER}/repos?sort=pushed&per_page=100`),
+        fetchJson(
+          `${GITHUB_API}/users/${GITHUB_USER}/repos?sort=pushed&per_page=100`,
+        ),
       ]);
       data = { profile, repos: repoData };
       writeCache(profile, repoData);
@@ -623,7 +643,8 @@ const validators = {
   email(value) {
     const v = value.trim();
     if (!v) return "Please enter your email.";
-    if (!emailPattern.test(v)) return "That email doesn't look right, e.g. name@example.com.";
+    if (!emailPattern.test(v))
+      return "That email doesn't look right, e.g. name@example.com.";
     return "";
   },
   subject(value) {
@@ -632,7 +653,8 @@ const validators = {
   message(value) {
     const length = value.trim().length;
     if (!length) return "Please write a message.";
-    if (length < MESSAGE_MIN) return `Add ${MESSAGE_MIN - length} more character(s).`;
+    if (length < MESSAGE_MIN)
+      return `Add ${MESSAGE_MIN - length} more character(s).`;
     return "";
   },
 };
@@ -697,7 +719,10 @@ contactForm.addEventListener("submit", async (event) => {
 
   if (firstInvalid !== -1) {
     formFields[firstInvalid].focus();
-    setFormStatus("Some fields need attention. Fix the highlighted fields and try again.", "error");
+    setFormStatus(
+      "Some fields need attention. Fix the highlighted fields and try again.",
+      "error",
+    );
     return;
   }
 
@@ -708,7 +733,10 @@ contactForm.addEventListener("submit", async (event) => {
 
   // Step 3: confirm, then clear the form for the next message.
   const name = document.querySelector("#name").value.trim().split(" ")[0];
-  setFormStatus(`Thanks, ${name}! Your message is ready. This demo form does not send data yet.`, "success");
+  setFormStatus(
+    `Thanks, ${name}! Your message is ready. This demo form does not send data yet.`,
+    "success",
+  );
   contactForm.reset();
   submitButton.textContent = "Send Message";
   updateCharCount();

@@ -61,7 +61,9 @@
             </p>
 
             <form class="name-form" id="name-form" novalidate>
-              <label class="visually-hidden" for="visitor-name">Your name</label>
+              <label class="visually-hidden" for="visitor-name"
+                >Your name</label
+              >
               <input
                 type="text"
                 id="visitor-name"
@@ -137,11 +139,43 @@
         </header>
 
         <div class="project-controls">
-          <div class="filter-buttons" role="group" aria-label="Filter projects by topic">
-            <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">All</button>
-            <button type="button" class="filter-btn" data-filter="Computer Vision" aria-pressed="false">Computer Vision</button>
-            <button type="button" class="filter-btn" data-filter="Machine Learning" aria-pressed="false">Machine Learning</button>
-            <button type="button" class="filter-btn" data-filter="NLP" aria-pressed="false">NLP</button>
+          <div
+            class="filter-buttons"
+            role="group"
+            aria-label="Filter projects by topic"
+          >
+            <button
+              type="button"
+              class="filter-btn is-active"
+              data-filter="all"
+              aria-pressed="true"
+            >
+              All
+            </button>
+            <button
+              type="button"
+              class="filter-btn"
+              data-filter="Computer Vision"
+              aria-pressed="false"
+            >
+              Computer Vision
+            </button>
+            <button
+              type="button"
+              class="filter-btn"
+              data-filter="Machine Learning"
+              aria-pressed="false"
+            >
+              Machine Learning
+            </button>
+            <button
+              type="button"
+              class="filter-btn"
+              data-filter="NLP"
+              aria-pressed="false"
+            >
+              NLP
+            </button>
           </div>
 
           <div class="control-row">
@@ -167,18 +201,36 @@
 
             <div class="control control-grow">
               <label for="project-search">Search</label>
-              <input type="search" id="project-search" class="project-search" placeholder="Search by name or technology…" autocomplete="off" />
+              <input
+                type="search"
+                id="project-search"
+                class="project-search"
+                placeholder="Search by name or technology…"
+                autocomplete="off"
+              />
             </div>
 
-            <button type="button" class="reset-btn" id="reset-projects">Reset</button>
+            <button type="button" class="reset-btn" id="reset-projects">
+              Reset
+            </button>
           </div>
 
           <p class="level-message" id="level-message" aria-live="polite"></p>
-          <p class="results-count" id="results-count" role="status" aria-live="polite"></p>
+          <p
+            class="results-count"
+            id="results-count"
+            role="status"
+            aria-live="polite"
+          ></p>
         </div>
 
         <div class="project-grid" id="project-grid">
-          <article class="project-card" data-date="2025-11" data-level="intermediate" data-tags="Computer Vision">
+          <article
+            class="project-card"
+            data-date="2025-11"
+            data-level="intermediate"
+            data-tags="Computer Vision"
+          >
             <img
               class="project-image"
               src="assets/images/projects/cvu-computer-vision.jpg"
@@ -190,7 +242,9 @@
 
             <h3>CVU — Computer Vision Project</h3>
 
-            <p class="project-meta">Intermediate · <time datetime="2025-11">Nov 2025</time></p>
+            <p class="project-meta">
+              Intermediate · <time datetime="2025-11">Nov 2025</time>
+            </p>
 
             <p>
               A COE 301 project exploring computer vision concepts and practical
@@ -198,7 +252,12 @@
             </p>
           </article>
 
-          <article class="project-card" data-date="2025-03" data-level="beginner" data-tags="Machine Learning">
+          <article
+            class="project-card"
+            data-date="2025-03"
+            data-level="beginner"
+            data-tags="Machine Learning"
+          >
             <img
               class="project-image"
               src="assets/images/projects/neo-classification.jpg"
@@ -210,7 +269,9 @@
 
             <h3>Near-Earth Object Classification</h3>
 
-            <p class="project-meta">Beginner · <time datetime="2025-03">Mar 2025</time></p>
+            <p class="project-meta">
+              Beginner · <time datetime="2025-03">Mar 2025</time>
+            </p>
 
             <p>
               Built machine learning models to classify near-Earth objects using
@@ -227,7 +288,12 @@
             </ul>
           </article>
 
-          <article class="project-card" data-date="2026-02" data-level="intermediate" data-tags="Computer Vision">
+          <article
+            class="project-card"
+            data-date="2026-02"
+            data-level="intermediate"
+            data-tags="Computer Vision"
+          >
             <img
               class="project-image"
               src="assets/images/projects/colorization.jpg"
@@ -239,7 +305,9 @@
 
             <h3>CIFAR-10 Image Colorization</h3>
 
-            <p class="project-meta">Intermediate · <time datetime="2026-02">Feb 2026</time></p>
+            <p class="project-meta">
+              Intermediate · <time datetime="2026-02">Feb 2026</time>
+            </p>
 
             <p>
               Developed an image colorization model using Lab color space and a
@@ -256,7 +324,12 @@
             </ul>
           </article>
 
-          <article class="project-card" data-date="2026-06" data-level="advanced" data-tags="NLP, Machine Learning">
+          <article
+            class="project-card"
+            data-date="2026-06"
+            data-level="advanced"
+            data-tags="NLP, Machine Learning"
+          >
             <img
               class="project-image"
               src="assets/images/projects/transformer.jpg"
@@ -267,7 +340,9 @@
             />
             <h3>Transformer Text Classifier</h3>
 
-            <p class="project-meta">Advanced · <time datetime="2026-06">Jun 2026</time></p>
+            <p class="project-meta">
+              Advanced · <time datetime="2026-06">Jun 2026</time>
+            </p>
 
             <p>
               Implemented a Transformer-based text classification model from
@@ -286,14 +361,18 @@
         </div>
 
         <p class="empty-state" id="empty-state" hidden>
-          No projects match these choices. Try another level, keyword, or press “Reset”.
+          No projects match these choices. Try another level, keyword, or press
+          “Reset”.
         </p>
       </section>
 
       <section id="github" class="section reveal">
         <header class="section-header">
           <h2>Latest on GitHub</h2>
-          <p>My most recently updated public repositories, loaded live from the GitHub API.</p>
+          <p>
+            My most recently updated public repositories, loaded live from the
+            GitHub API.
+          </p>
         </header>
         <div class="github-profile" id="github-profile" hidden></div>
 
@@ -315,7 +394,12 @@
           </div>
         </div>
 
-        <div id="repo-status" class="repo-status" role="status" aria-live="polite"></div>
+        <div
+          id="repo-status"
+          class="repo-status"
+          role="status"
+          aria-live="polite"
+        ></div>
         <ul class="repo-list" id="repo-list"></ul>
       </section>
 
@@ -569,16 +653,32 @@
           <div class="form-group">
             <label for="message">Message</label>
 
-            <textarea id="message" name="message" rows="6" maxlength="500" required aria-describedby="message-count"></textarea>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              maxlength="500"
+              required
+              aria-describedby="message-count"
+            ></textarea>
             <div class="field-footer">
               <p class="field-error" id="message-error" aria-live="polite"></p>
               <p class="char-count" id="message-count">0 / 500</p>
             </div>
           </div>
 
-          <p class="form-hint" id="form-hint">Fill in every field to enable the Send button.</p>
+          <p class="form-hint" id="form-hint">
+            Fill in every field to enable the Send button.
+          </p>
 
-          <button type="submit" class="submit-button" id="submit-button" disabled>Send Message</button>
+          <button
+            type="submit"
+            class="submit-button"
+            id="submit-button"
+            disabled
+          >
+            Send Message
+          </button>
 
           <p
             class="form-status"
